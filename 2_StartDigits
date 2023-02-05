@@ -1,0 +1,29 @@
+1. Digits Nvidia 사이트
+
+https://developer.nvidia.com/rdp/digits-download
+
+2. 컨테이너 설치
+
+https://hub.docker.com/r/nvidia/digits/
+
+3. DIGITS 도커 컨테이너 생성 
+
+Bashrc 에 넣고 사용
+* 단, -v 옵션에 들어가는 공유 폴더는 서버의 실제 폴더 이름을 넣어야 함. 
+
+vim ~/.bashrc
+
+alias DIGITS60='sudo nvidia-docker run --name DIGITS60 -it -d --net=host -v "/drv3:/workspace" nvidia/digits'
+alias DIGITS60ATTACH='sudo docker exec -it DIGITS60 /bin/bash'
+alias DIGITS60RESTART='sudo docker restart DIGITS60'
+
+3. 컨테이너 생성
+
+DIGITS60
+
+4. 컨테이너 attach
+
+DIGITS60ATTACH
+
+
+
